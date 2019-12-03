@@ -1,0 +1,3 @@
+select fanta_cli as CLIENTE,serie_ide as SERIE,lote_ide as LOTE,pedido_ide as PEDIDO,codpro_ide as PRODUTO,pl_ide as LIQUIDO,fabrica_ide as FABRICACAO,valida_ide as VALIDADE 
+from cadide,cadcli 
+where  serie_ide='L610939415' and codcli_ide=codigo_cli
