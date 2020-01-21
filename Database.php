@@ -16,7 +16,23 @@ class Database{
         $this->db_pass=$pass;
         $this->db_port=$port;
     }
-
+	
+	public function getHost(){
+		return $this->db_host;
+	}
+	
+	public function getUser(){
+		return $this->db_user;
+	}
+	
+	public function getPass(){
+		return $this->db_pass;
+	}
+	
+	public function getPort(){
+		return $this->db_port;
+	}
+	
     public function connect(){
         if(!$this->con){
             $this->con = mysqli_connect($this->db_host,$this->db_user,$this->db_pass,"",$this->db_port);

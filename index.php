@@ -114,7 +114,7 @@
                 if(!empty($_POST['id'])){
                     $id = new Id;
             
-                    $idInfo = $id->getInfo($_POST['id']);
+                    $idInfo = $id->getInfoId($_POST['id']);
 
                     if($idInfo){
                         echo "<div class='row d-flex justify-content-center mt-2'>";
@@ -135,7 +135,13 @@
                         echo "</ul></div>";
                         echo "</div>";
                     }else{
-                        echo "id Não encontrado!";
+
+                        $idInfo = $id->getInfoPallet($_POST['id']);
+                        if($idInfo){
+                            print_r($idInfo);
+                        }else{
+                            echo "id ou palete Inexistente na base de dados!";
+                        }
                     }
                 }else{
                     echo "Nenhum ID para consulta!";
