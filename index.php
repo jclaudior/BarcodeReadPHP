@@ -120,9 +120,10 @@
                         echo "<div class='row d-flex justify-content-center mt-2'>";
                         echo "<div class='card' style='width: 18rem;'>";
                         echo "<div class='card-header'>
-                                    Informação 
+                                    Informação ID
                               </div>";
                         echo "<ul class='list-group list-group-flush'></li>";
+                        echo "<li class='list-group-item'><b>COD. CLIENTE: </b>" . $idInfo['CODCLI'] ."</li>";
                         echo "<li class='list-group-item'><b>NOME: </b>" . $idInfo['CLIENTE'] ."</li>";
                         echo "<li class='list-group-item'><b>SERIE: </b>" . $idInfo['SERIE'] ."</li>";
                         echo "<li class='list-group-item'><b>LOTE: </b>" . $idInfo['LOTE'] ."</li>";
@@ -138,7 +139,22 @@
 
                         $idInfo = $id->getInfoPallet($_POST['id']);
                         if($idInfo){
-                            print_r($idInfo);
+                            echo "<div class='row d-flex justify-content-center mt-2'>";
+                            echo "<div class='card' style='width: 18rem;'>";
+                            echo "<div class='card-header'>
+                                        Informação Pallet
+                                  </div>";
+                            echo "<ul class='list-group list-group-flush'></li>";
+                            echo "<li class='list-group-item'><b>COD. CLIENTE: </b>" . $idInfo['codigo_cli'] ."</li>";
+                            echo "<li class='list-group-item'><b>NOME: </b>" . $idInfo['fanta_cli'] ."</li>";
+                            echo "<li class='list-group-item'><b>PALETE: </b>" . $idInfo['lote_en4'] . $idInfo['numpal_en4'] ."</li>";
+                            echo "<li class='list-group-item'><b>LOTE: </b>" . $idInfo['lote_en4'] ."</li>";
+                            //echo "<li class='list-group-item'><b>PEDIDO: </b>" . $idInfo['PEDIDO'] ."</li>";
+                            echo "<li class='list-group-item'><b>CÓDIGO: </b>" . $idInfo['codpro_en1'] ."</li>";
+                            echo "<li class='list-group-item'><b>DESCRIÇÃO: </b>" . $idInfo['descri_pro'] ."</li>";
+                            echo "<li class='list-group-item'><b>SALDO: </b>" .$idInfo['saldoc_en4']."</li>";
+                            echo "</ul></div>";
+                            echo "</div>";
                         }else{
                             echo "id ou palete Inexistente na base de dados!";
                         }

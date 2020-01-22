@@ -22,7 +22,7 @@ class Id{
 
     function getInfoId($id){
         if($this->novaConexao == true){
-            $idInfo = $this->banco->selectQuery("select fanta_cli as CLIENTE,serie_ide as SERIE,lote_ide as LOTE,pedido_ide as PEDIDO,codpro_ide as CODIGO,descri_pro as DESCRICAO,pl_ide as LIQUIDO,fabrica_ide as FABRICACAO,valida_ide as VALIDADE 
+            $idInfo = $this->banco->selectQuery("select fanta_cli as CLIENTE, codigo_cli as CODCLI, serie_ide as SERIE,lote_ide as LOTE,pedido_ide as PEDIDO,codpro_ide as CODIGO,descri_pro as DESCRICAO,pl_ide as LIQUIDO,fabrica_ide as FABRICACAO,valida_ide as VALIDADE 
             from cadide,cadcli,cadpro 
             where  serie_ide='$id' and codcli_ide=codigo_cli and codpro_ide=codigo_pro");
             if($idInfo){
