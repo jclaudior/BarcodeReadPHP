@@ -9,11 +9,11 @@ class Id{
     private $banco;
 
     function __construct() {
-        $this->banco = new Database("192.168.1.246","consu","consulta123","3306");
+        $this->banco = new Database("localhost","root","","3306");
         
         $novaConexao = $this->banco->connect();
         if($novaConexao){
-            $this->novaConexao = $this->banco->setDB("econ");
+            $this->novaConexao = $this->banco->setDB("");
         }else{
             echo "Erro ao conectar ao servidor Mysql!";
             return false;
